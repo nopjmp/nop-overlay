@@ -1,0 +1,43 @@
+From: Jory A. Pratt <anarchy@gentoo.org>
+
+Only use system heap reporter with glibc
+
+diff --git a/xpcom/base/nsMemoryReporterManager.cpp b/xpcom/base/nsMemoryReporterManager.cpp
+--- a/xpcom/base/nsMemoryReporterManager.cpp
++++ b/xpcom/base/nsMemoryReporterManager.cpp
+@@ -693,16 +693,17 @@ PrivateDistinguishedAmount(int64_t* aN)
+                             (PPROCESS_MEMORY_COUNTERS) &pmcex, sizeof(pmcex))) {
+     return NS_ERROR_FAILURE;
+   }
+ 
+   *aN = pmcex.PrivateUsage;
+   return NS_OK;
+ }
+ 
++#ifdef __GLIBC__
+ #define HAVE_SYSTEM_HEAP_REPORTER 1
+ // Windows can have multiple separate heaps. During testing there were multiple
+ // heaps present but the non-default ones had sizes no more than a few 10s of
+ // KiBs. So we combine their sizes into a single measurement.
+ static MOZ_MUST_USE nsresult
+ SystemHeapSize(int64_t* aSizeOut)
+ {
+   // Get the number of heaps.
+@@ -743,16 +744,17 @@ SystemHeapSize(int64_t* aSizeOut)
+     NS_ENSURE_TRUE(lastError == ERROR_NO_MORE_ITEMS, NS_ERROR_FAILURE);
+ 
+     heapsSize += heapSize;
+   }
+ 
+   *aSizeOut = heapsSize;
+   return NS_OK;
+ }
++#endif
+ 
+ struct SegmentKind
+ {
+   DWORD mState;
+   DWORD mType;
+   DWORD mProtect;
+   int mIsStack;
+ };

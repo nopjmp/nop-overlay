@@ -1,0 +1,27 @@
+From: Jory A. Pratt <anarchy@gentoo.org>
+
+Fix member not declared in this class for musl compilation
+https://bugs.gentoo.org/show_bug.cgi?id=607562
+
+diff --git a/mozilla-config.h.in b/mozilla-config.h.in
+--- a/mozilla-config.h.in
++++ b/mozilla-config.h.in
+@@ -49,17 +49,17 @@
+ 
+ /*
+  * Force-include hunspell_alloc_hooks.h and hunspell_fopen_hooks.h for hunspell,
+  * so that we don't need to modify them directly.
+  *
+  * HUNSPELL_STATIC is defined in extensions/spellcheck/hunspell/src/Makefile.in,
+  * unless --enable-system-hunspell is defined.
+  */
+-#if defined(HUNSPELL_STATIC)
++#if 0
+ #include "hunspell_alloc_hooks.h"
+ #include "hunspell_fopen_hooks.h"
+ #endif
+ 
+ /*
+  * Force-include sdkdecls.h for building the chromium sandbox code.
+  *
+  * CHROMIUM_SANDBOX_BUILD is defined in security/sandbox/moz.build.
