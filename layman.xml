@@ -7,7 +7,7 @@
     <homepage>https://github.com/nopjmp/nop-overlay</homepage>
     <owner type="person">
       <name><![CDATA[nopjmp]]></name>
-      <!--<email></email>-->
+      <email><![CDATA[jmp@0x.gg]]></email>
     </owner>
     <source type="git">git://github.com/nopjmp/nop-overlay.git</source>
     <source type="git">https://github.com/nopjmp/nop-overlay.git</source>
