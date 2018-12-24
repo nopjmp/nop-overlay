@@ -416,21 +416,21 @@ src_install() {
 	# Pax mark xpcshell for hardened support, only used for startupcache creation.
 	pax-mark m "${BUILD_OBJ_DIR}"/dist/bin/xpcshell
 
-#	# Add our default prefs for firefox
-#	cp "${FILESDIR}"/gentoo-default-prefs.js-1 \
-#		"${BUILD_OBJ_DIR}/dist/bin/browser/defaults/preferences/all-gentoo.js" \
-#		|| die
-#
-#	# Augment this with hwaccel prefs
-#	if use hwaccel ; then
-#		cat "${FILESDIR}"/gentoo-hwaccel-prefs.js-1 >> \
-#		"${BUILD_OBJ_DIR}/dist/bin/browser/defaults/preferences/all-gentoo.js" \
-#		|| die
-#	fi
-#
-#	echo "pref(\"extensions.autoDisableScopes\", 3);" >> \
-#		"${BUILD_OBJ_DIR}/dist/bin/browser/defaults/preferences/all-gentoo.js" \
-#		|| die
+	# Add our default prefs for firefox
+	cp "${FILESDIR}"/gentoo-default-prefs.js \
+		"${BUILD_OBJ_DIR}/dist/bin/browser/defaults/preferences/all-gentoo.js" \
+		|| die
+
+	# Augment this with hwaccel prefs
+	if use hwaccel ; then
+		cat "${FILESDIR}"/gentoo-hwaccel-prefs.js >> \
+		"${BUILD_OBJ_DIR}/dist/bin/browser/defaults/preferences/all-gentoo.js" \
+		|| die
+	fi
+
+	echo "pref(\"extensions.autoDisableScopes\", 3);" >> \
+		"${BUILD_OBJ_DIR}/dist/bin/browser/defaults/preferences/all-gentoo.js" \
+		|| die
 
 	if use nsplugin; then
 		echo "pref(\"plugin.load_flash_only\", false);" >> \
