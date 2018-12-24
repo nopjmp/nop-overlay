@@ -63,6 +63,8 @@ RDEPEND=">=app-text/hunspell-1.5.4:=
 	>=virtual/libffi-3.0.10
 	>=dev-libs/nss-3.32
 	>=dev-libs/nspr-4.16
+	app-arch/zip
+	app-arch/unzip
 	virtual/ffmpeg
 	x11-libs/libX11
 	x11-libs/libXcomposite
