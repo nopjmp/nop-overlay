@@ -29,7 +29,7 @@ KEYWORDS="~amd64 ~x86"
 
 SLOT="0"
 LICENSE="MPL-2.0 GPL-2 LGPL-2.1"
-IUSE="clang eme-free +gmp-autoupdate hardened hwaccel jack nsplugin selinux test dbus debug neon pulseaudio selinux startup-notification system-harfbuzz system-icu system-jpeg system-libevent system-sqlite system-libvpx"
+IUSE="+clang eme-free +gmp-autoupdate hardened hwaccel jack nsplugin selinux test dbus debug neon pulseaudio selinux startup-notification system-harfbuzz system-icu system-jpeg system-libevent system-sqlite system-libvpx"
 
 SRC_URI="https://github.com/MrAlex94/Waterfox/archive/${PV}.tar.gz"
 
@@ -63,6 +63,7 @@ RDEPEND=">=app-text/hunspell-1.5.4:=
 	>=virtual/libffi-3.0.10
 	>=dev-libs/nss-3.32
 	>=dev-libs/nspr-4.16
+	sys-devel/llvm
 	app-arch/zip
 	app-arch/unzip
 	virtual/ffmpeg
