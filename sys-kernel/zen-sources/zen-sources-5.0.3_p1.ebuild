@@ -12,7 +12,7 @@ CKV="${PV}"
 ETYPE="sources"
 
 # v5.0.3-zen1 
-EGIT_BRANCH="v${PV/_p/-zen}"
+EGIT_COMMIT="v${PV/_p/-zen}"
 EGIT_REPO_URI="https://github.com/zen-kernel/zen-kernel.git"
 
 inherit kernel-2 git-r3
@@ -35,5 +35,5 @@ src_install() {
 	dodir /usr/src
 	echo ">>> Copying sources ..."
 
-	mv "${S}" "${ED}"usr/src/linux-${CKV}-zen0 || die
+	mv "${S}" "${ED}"usr/src/linux-${PV/_p/-zen} || die
 }
