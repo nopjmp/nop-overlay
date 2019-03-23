@@ -10,7 +10,7 @@ inherit font python-any-r1
 DESCRIPTION="a bitmap font"
 HOMEPAGE="https://github.com/lucy/tewi-font"
 if [[ ${PV} != *9999* ]]; then
-	SRC_URI="https://github.com/lucy/tewi-font/archive/${PV}.tar.gz -> ${P}.tar.gz"
+	SRC_URI="https://github.com/nopjmp/tewi-font/archive/${PV}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="alpha amd64 arm arm64 hppa ia64 m68k ~mips ppc ppc64 s390 sh sparc x86 ~amd64-fbsd ~sparc-fbsd ~x86-fbsd"
 else
 	EGIT_REPO_URI="https://github.com/lucy/tewi-font.git"
