@@ -11,7 +11,7 @@ CKV="${PV}"
 
 ETYPE="sources"
 
-# v5.0.3-zen1 
+# v5.0.4-zen1 
 EGIT_COMMIT="v${PV/_p/-zen}"
 EGIT_REPO_URI="https://github.com/zen-kernel/zen-kernel.git"
 
