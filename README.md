@@ -6,15 +6,13 @@ This overlay is mostly software I've enjoyed using or other people seem to enjoy
 
 ## Basic usage
 
-You **WILL** need to have layman setup before using this overlay.
-
-Since this is an unofficial repository, you'll need to add it using layman:
+### Layman
 
 ```
 layman -o https://github.com/nopjmp/nop-overlay/raw/master/layman.xml -f -a nop-overlay
 ```
 
-Alternatively, you can use the /etc/portage/repos.conf folder, and make a file:
+### repos.conf
 
 ```
 [nop-overlay]
