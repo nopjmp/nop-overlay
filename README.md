@@ -14,6 +14,16 @@ Since this is an unofficial repository, you'll need to add it using layman:
 layman -o https://github.com/nopjmp/nop-overlay/raw/master/layman.xml -f -a nop-overlay
 ```
 
+Alternatively, you can use the /etc/portage/repos.conf folder, and make a file:
+
+```
+[nop-overlay]
+location = /usr/local/nop-overlay
+sync-type = git
+sync-uri = https://github.com/nopjmp/nop-overlay.git
+auto-sync = yes
+```
+
 All software is marked as testing. You'll need to unmask the keywords in your packages.keywords directory/file.
 
 ## TODO
