@@ -173,9 +173,6 @@ src_unpack() {
 src_prepare() {
 	eapply "${FILESDIR}/gentoo"
 
-	# Fix GCC 8+
-	epatch "${FILESDIR}/${P}-fix-gcc-8.patch"
-
 	# Enable gnomebreakpad
 	if use debug ; then
 		sed -i -e "s:GNOME_DISABLE_CRASH_DIALOG=1:GNOME_DISABLE_CRASH_DIALOG=0:g" \
