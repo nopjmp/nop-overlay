@@ -64,7 +64,7 @@ RDEPEND=">=app-text/hunspell-1.5.4:=
 	>=dev-libs/nss-3.32
 	>=dev-libs/nspr-4.16
 	sys-devel/llvm
-	clang? ( sys-devel/clang )
+	sys-devel/clang
 	app-arch/zip
 	app-arch/unzip
 	virtual/ffmpeg
