@@ -21,5 +21,5 @@ src_configure() {
 src_install() {
 	default
 
-	newbashcomp contrib/${PN}.bash-completion ${PN}
+	newbashcomp src/bash-completion/${PN} ${PN}
 }
